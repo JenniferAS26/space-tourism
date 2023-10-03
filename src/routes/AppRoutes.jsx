@@ -1,10 +1,14 @@
 import { Routes, Route } from 'react-router-dom'
-import App from '../components/App'
+import Layout from '../pages/Layout'
+import Home from '../pages/Home'
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route index element={<App />} />
+      <Route element={<Layout />}>
+        <Route path='/' element={<Home />} />
+        <Route path='destination' />
+      </Route>
     </Routes>
   )
 }
