@@ -8,6 +8,11 @@
   &__title {
     font-family: $font-source-heading-1;
     font-size: 5.6rem;
+    @media (min-width: $tablet-width) {
+      justify-self: center;
+      font-size: 8rem;
+      margin-top: 10px;
+    }
   }
   &__text {
     font-family: $font-source-heading-3;
@@ -18,11 +23,19 @@
     color: $primary-text-color;
     margin-top: 15px;
     align-self: flex-start;
+    @media (min-width: $tablet-width) {
+      display: block;
+      width: 573px;
+      font-size: 1.6rem;
+    }
   }
   &__bar {
     width: 100%;
     height: 2px;
     background-color: #383B4B;
+    @media (min-width: $tablet-width) {
+      height: 1px;
+    }
   }
   &__distance-travel {
     @include gridCenter;
@@ -49,6 +62,14 @@
         text-transform: uppercase;
       }
     }
+    @media (min-width: $tablet-width) {
+      grid-template-columns: repeat(2, 220px);
+    }
+  }
+  @media (min-width: $tablet-width) {
+    grid-template-rows: 70px 120px 5px 250px;
+    grid-template-columns: $tablet-width;
+    @include removeHorizontalScroll;
   }
 }
 

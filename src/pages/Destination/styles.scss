@@ -8,6 +8,7 @@
   max-width: 100vw;
   height: 100%;
   &__planet-container {
+    min-width: $mobile-width;
     @include gridCenter;
     &--title {
       margin-top: 20px;
@@ -16,6 +17,7 @@
       font-weight: $regular-weight;
       letter-spacing: 2.7px;
       line-height: 1;
+      padding-left: 20px;
       span {
         opacity: 0.25;
         margin-right: 10px;
@@ -32,6 +34,7 @@
     &--content {
       @include gridCenter;
       grid-template-rows: 220px 500px;
+      grid-template-columns: $mobile-width;
       .image {
         width: 170px;
         height: 170px;
@@ -46,7 +49,7 @@
       }
       .wrapper {
         @include gridCenter;
-        grid-template-rows: 60px auto;
+        grid-template-rows: 90px auto;
         nav {
           width: 250px;
           li {
@@ -55,22 +58,45 @@
             font-weight: $regular-weight;
             letter-spacing: 2.4px;
             color: $primary-text-color;
+            @media (min-width: $tablet-width) {
+              font-size: 1.8rem;
+              letter-spacing: 2.7px;
+            }
+          }
+          @media (min-width: $tablet-width) {
+            width: 300px;
           }
         }
         .information {
           @include gridCenter;
           align-content: stretch;
         }
+        @media (min-width: $tablet-width) {
+          width: 100%;
+        }
+      }
+      @media (min-width: $tablet-width) {
+        grid-template-rows: 327px 607px;
+        grid-template-columns: $tablet-width;
       }
     }
+    @media (min-width: $tablet-width) {
+      min-width: $tablet-width;
+      min-height: $tablet-height;
+      width: 100%;
+      margin: 0 auto;
+      grid-template-rows: 90px auto;
+
+    }
+    // @media (min-width: $desktop-width) {
+    // }
   }
   @media (min-width: $tablet-width) {
     background-image: url('../../assets/destination/background-destination-tablet.jpg');
     background-size: cover;
     background-position: center;
-    max-width: 100vw;
+    min-width: $tablet-width;
     height: 100%;
-    border: 1px solid palegoldenrod;
 
   }
   @media (min-width: $desktop-width) {
@@ -96,7 +122,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -108,6 +134,9 @@
   &:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+  &:hover {
+    color: $secondary-text-color !important;
   }
 }
 
