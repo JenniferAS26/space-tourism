@@ -5,6 +5,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route index element={<App />} />
+      <Route crew element={<crew />} />
     </Routes>
   )
 }
