@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div className="destination-desktop w-full h-full">
+    <Navbar />
+    <div className="p-5 lg:p-20">
+      <h1 className="md:text-[28px]  text-center md:text-left font-heading2 text-color3 font-normal uppercase text-base leading-tight tracking-[0.3rem]">
+        <span className="text-base font-semibold tracking-widest leading-tight mix-blend-normal opacity-25 px-2 md:px-4">
+          01
+        </span>
+        PICK YOUR DESTINATION
+      </h1>
+      <div className=" md:px-20 lg:flex mt-5">
+        <div className="px-[100px] py-[25px] lg:w-[100%] lg:p-0  ">
+          {togglePlanetImage()}
+        </div>
+        <div className=" lg:ml-[200px] ">
+            <div className="text-color3 flex justify-center lg:justify-start py-2 ">
+              <p
+                className= "hover-underline-animation cursor-pointer mx-3" 
+                onClick={() => setSelectedPlanet("moon")}
+              >
+                {destination.moon.name}
+              </p>
+              <p
+                className= "hover-underline-animation cursor-pointer mx-3" 
+                onClick={() => setSelectedPlanet("mars")}
+              >
+                {destination.mars.name}
+              </p>
+              <p
+                className= "hover-underline-animation cursor-pointer mx-3"
+                onClick={() => setSelectedPlanet("europa")}
+              >
+                {destination.europa.name}
+              </p>
+              <p
+                className= "hover-underline-animation cursor-pointer mx-3"
+                onClick={() => setSelectedPlanet("titan")}
+              >
+                {destination.titan.name}
+              </p>
+            </div>
+            <div>
+              {togglePlanet()}
+            </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</body>
+</html>
