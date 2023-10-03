@@ -4,10 +4,10 @@ import Header from '../../components/Header'
 
 const Layout = () => {
   return (
-    <>
+    <section className='layout'>
       <Header />
       <Outlet />
-    </>
+    </section>
   )
 }
 
