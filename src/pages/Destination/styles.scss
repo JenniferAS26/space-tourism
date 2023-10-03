@@ -7,7 +7,63 @@
   background-position: center;
   max-width: 100vw;
   height: 100%;
-  border: 1px solid palevioletred;
+  &__planet-container {
+    @include gridCenter;
+    &--title {
+      margin-top: 20px;
+      font-family: $font-source-heading-2;
+      font-size: 1.6rem;
+      font-weight: $regular-weight;
+      letter-spacing: 2.7px;
+      line-height: 1;
+      span {
+        opacity: 0.25;
+        margin-right: 10px;
+      }
+      @media (min-width: $tablet-width) {
+        justify-self: flex-start;
+        font-size: 2rem;
+      }
+      @media (min-width: $desktop-width) {
+        justify-self: flex-start;
+        font-size: 2.8rem;
+      }
+    }
+    &--content {
+      @include gridCenter;
+      grid-template-rows: 220px 500px;
+      .image {
+        width: 170px;
+        height: 170px;
+        @media (min-width: $tablet-width) {
+          width: 300px;
+          height: 300px;
+        }
+        @media (min-width: $desktop-width) {
+          width: 445px;
+          height: 445px;
+        }
+      }
+      .wrapper {
+        @include gridCenter;
+        grid-template-rows: 60px auto;
+        nav {
+          width: 250px;
+          li {
+            font-family: $font-source-heading-2;
+            font-size: 1.4rem;
+            font-weight: $regular-weight;
+            letter-spacing: 2.4px;
+            color: $primary-text-color;
+          }
+        }
+        .information {
+          @include gridCenter;
+          align-content: stretch;
+        }
+      }
+    }
+  }
   @media (min-width: $tablet-width) {
     background-image: url('../../assets/destination/background-destination-tablet.jpg');
     background-size: cover;
@@ -15,6 +71,7 @@
     max-width: 100vw;
     height: 100%;
     border: 1px solid palegoldenrod;
+
   }
   @media (min-width: $desktop-width) {
     background-image: url('../../assets/destination/background-destination-desktop.jpg');
@@ -23,6 +80,44 @@
     max-width: 100vw;
     height: 100%;
     border: 1px solid palegreen;
+    &__planet-container {
+      width: 100%;
+      &--content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
-  
+}
+
+.underline-animation {
+  display: inline-block;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    background-color: $secondary-text-color;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-in-out;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

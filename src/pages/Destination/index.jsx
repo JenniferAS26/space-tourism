@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Header from '../../components/Header'
 import DestinationLayout from '../../components/DestinationLayout'
-import moon from '../../assets/destination/image-moon.png'
-import mars from '../../assets/destination/image-mars.png'
-import europa from '../../assets/destination/image-europa.png'
-import titan from '../../assets/destination/image-titan.png'
+import moon from '../../assets/destination/image-moon.webp'
+import mars from '../../assets/destination/image-mars.webp'
+import europa from '../../assets/destination/image-europa.webp'
+import titan from '../../assets/destination/image-titan.webp'
 import { destination } from '../../resources'
 import './styles.scss'
 
@@ -14,26 +14,26 @@ const Destination = () => {
   const changeImage = () => {
     if (choosePlanet ==='moon') {
       return (
-        <div>
-          <img src={moon} alt="" />
+        <div className='w-full h-full m-auto'>
+          <img src={moon} alt="moon image" />
         </div>
       )
     } else if (choosePlanet ==='mars') {
       return (
-        <div>
-          <img src={mars} alt="" />
+        <div className='w-full h-full m-auto'>
+          <img src={mars} alt="planet mars image" />
         </div>
       )
     } else if (choosePlanet ==='europa') {
       return (
-        <div>
-          <img src={europa} alt="" />
+        <div className='w-full h-full m-auto'>
+          <img src={europa} alt="moon Europa image" />
         </div>
       )
     } else if (choosePlanet ==='titan') {
       return (
-        <div>
-          <img src={titan} alt="" />
+        <div className='w-full h-full m-auto'>
+          <img src={titan} alt="moon Titan image" />
         </div>
       )
     }
@@ -42,7 +42,7 @@ const Destination = () => {
   const changePlanetInfo = () => {
     if (choosePlanet ==='moon') {
       return (
-        <div>
+        <div className='w-full h-full'>
           <DestinationLayout 
             name={destination.moon.name}
             description={destination.moon.description}
@@ -53,7 +53,7 @@ const Destination = () => {
       )
     } else if (choosePlanet ==='mars') {
       return (
-        <div>
+        <div className='w-full h-full'>
           <DestinationLayout 
             name={destination.mars.name}
             description={destination.mars.description}
@@ -64,7 +64,7 @@ const Destination = () => {
       )
     } else if (choosePlanet ==='europa') {
       return (
-        <div>
+        <div className='w-full h-full'>
           <DestinationLayout 
             name={destination.europa.name}
             description={destination.europa.description}
@@ -75,7 +75,7 @@ const Destination = () => {
       )
     } else if (choosePlanet ==='titan') {
       return (
-        <div>
+        <div className='w-full h-full'>
           <DestinationLayout 
             name={destination.titan.name}
             description={destination.titan.description}
@@ -90,42 +90,44 @@ const Destination = () => {
   return (
     <section className='destination w-full h-full'>
       <Header />
-      <div className='destination__planet-container'>
+      <div className='destination__planet-container px-10'>
         <h2 className='destination__planet-container--title'><span>01</span> PICK YOUR DESTINATION</h2>
         <div className='destination__planet-container--content'>
           <div className='image'>
             {changeImage()}
           </div>
-          <nav className='lg:ml-[200px]'>
-            <ul className='flex justify-center lg:justify-start py-2'>
-              <li 
-                className='cursor-pointer'
-                onClick={() => setChoosePlanet('moon')}
-              >
-                {destination.moon.name}
-              </li>
-              <li 
-                className='cursor-pointer'
-                onClick={() => setChoosePlanet('mars')}
-              >
-                {destination.mars.name}
-              </li>
-              <li 
-                className='cursor-pointer'
-                onClick={() => setChoosePlanet('europa')}
-              >
-                {destination.europa.name}
-              </li>
-              <li 
-                className='cursor-pointer'
-                onClick={() => setChoosePlanet('titan')}
-              >
-                {destination.titan.name}
-              </li>
-            </ul>
-          </nav>
-          <div>
-            {changePlanetInfo()}
+          <div className="wrapper w-full h-full">
+            <nav className='m-auto lg:ml-[200px]'>
+              <ul className='flex justify-evenly'>
+                <li
+                  className='underline-animation cursor-pointer'
+                  onClick={() => setChoosePlanet('moon')}
+                >
+                  {destination.moon.name}
+                </li>
+                <li
+                  className='underline-animation cursor-pointer'
+                  onClick={() => setChoosePlanet('mars')}
+                >
+                  {destination.mars.name}
+                </li>
+                <li
+                  className='underline-animation cursor-pointer'
+                  onClick={() => setChoosePlanet('europa')}
+                >
+                  {destination.europa.name}
+                </li>
+                <li
+                  className='underline-animation cursor-pointer'
+                  onClick={() => setChoosePlanet('titan')}
+                >
+                  {destination.titan.name}
+                </li>
+              </ul>
+            </nav>
+            <div className='information w-full h-full'>
+              {changePlanetInfo()}
+            </div>
           </div>
         </div>
       </div>
