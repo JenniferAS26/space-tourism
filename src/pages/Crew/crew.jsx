@@ -1,4 +1,3 @@
-//import { useEffect, useState } from "react"
 import desktop from "/src/assets/crew/background-crew-desktop.jpg";
 import mobile from "/src/assets/crew/background-crew-mobile.jpg";
 import tablet from "/src/assets/crew/background-crew-tablet.jpg";
@@ -6,7 +5,7 @@ import douglas from "/src/assets/crew/image-douglas-hurley.png";
 import mark from "/src/assets/crew/image-mark-shuttleworth.png";
 import victor from "/src/assets/crew/image-victor-glover.png";
 import anoussheh from "/src/assets/crew/image-anousheh-ansari.png";
-
+ 
 const Crew = () => {
   return (
     <section className="bg-background crew-page-container">
@@ -36,13 +35,13 @@ const Crew = () => {
           </div>
         </div>
 
-        <div className="content-MARK flex">
-          <div className="content-MARK-2 flex-col">
+        <div className="content-mark flex">
+          <div className="content-mark-2 flex-col">
             <p className="uppercase"> MISSION SPECIALIST</p>
             <h1 className="font-bellefair text-3.1vw"> MARK SHUTTLEWORTH</h1>
           </div>
 
-          <div className="content-MARK-texto">
+          <div className="content-mark-texto">
             <p className="font-bellefair">
               Mark Richard Shuttleworth is the founder and CEO of Canonical,
               the company behind the Linux-based Ubuntu operating system.
@@ -60,7 +59,7 @@ const Crew = () => {
         <div className="content-victor flex">
           <div className="content-victor-3 flex-col">
             <p> PILOT</p>
-            <h1 className="font-bellefair text-3.1vw"> VIRCTOR GLOVER</h1>
+            <h1 className="font-bellefair text-3.1vw"> VICTOR GLOVER</h1>
           </div>
 
           <div className="content-victor-texto">
@@ -86,10 +85,9 @@ const Crew = () => {
 
           <div className="content-anousheh-texto">
             <p className="font-bellefair">
-              Pilot on the first operational flight of the SpaceX Crew Dragon to
-              the International Space Station. Glover is a commander in the U.S.
-              Navy where he pilots an F/A-18.He was a crew member of Expedition
-              64, and served as a station systems flight engineer.
+            Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. 
+            Ansari was the fourth self-funded space tourist, the first self-funded woman to 
+            fly to the ISS, and the first Iranian in space. 
             </p>
           </div>
 
