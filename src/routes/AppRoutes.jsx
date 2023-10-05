@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
-// import Layout from '../pages/Layout'
-import Home from '../pages/Home'
+import Home from '../pages/Home/index.jsx'
 import Destination from '../pages/Destination'
+import { Technology } from '../pages/Technology/Technology'
 
 const AppRoutes = () => {
   
@@ -9,6 +9,7 @@ const AppRoutes = () => {
     <Routes>
       <Route index element={<Home />} />
       <Route path='destination' element={<Destination />} />
+      <Route path='technology' element={<Technology />} />
     </Routes>
   )
 }
