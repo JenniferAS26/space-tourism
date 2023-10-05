@@ -7,6 +7,8 @@
   background-position: center;
   max-width: 100%;
   height: 100%;
+  display: grid;
+  gap: 12px;
   @include removeHorizontalScroll;
   .content-douglas, .content-mark, .content-victor, .content-anousheh, .content-anousheh {
     flex-direction: column-reverse;

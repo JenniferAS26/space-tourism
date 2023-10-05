@@ -1,3 +1,4 @@
+import Header from '../../components/Header'
 import douglasImage from "../../assets/crew/image-douglas-hurley.png";
 import markImage from "../../assets/crew/image-mark-shuttleworth.png";
 import victorImage from "../../assets/crew/image-victor-glover.png";
@@ -8,6 +9,7 @@ const Crew = () => {
 
   return (
     <section className="crew-page-container">
+      <Header />
       <div className="crew-content-wrapper space-y-8 md:space-y-12">
         
         <div className="crew-title flex flex-col">
