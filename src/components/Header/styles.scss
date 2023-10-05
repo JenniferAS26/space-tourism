@@ -1,0 +1,63 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  // position: fixed;
+  top: 2em;
+  right: 0;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 70px 2fr 3fr;
+  width: 100%;
+  z-index: 10;
+}
+  
+.navbar {
+  backdrop-filter: blur(5em);
+  height: 6em;
+  background-color: $pale-frosty-blue-t;
+  text-transform: uppercase;
+}
+
+.navlist {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.nav-number {
+  font-weight: 600;
+}
+
+.navlink a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: lighter;
+  letter-spacing: .1em;
+  font-family: "Barlow Condensed";
+  font-size: 1.6rem;
+}
+
+.navlink a:hover,
+.navlink > .active {
+  box-shadow: inset 0 -0.3em $pale-frosty-blue;
+}
+
+.header__line {
+  height: .1em;
+  background-color: $pale-frosty-blue-t;
+  margin-right: -2em;
+  z-index: 2;
+}
+
+.logo {
+  margin: auto;
+}
+
+.logo img {
+  height: 2.9em;
+}

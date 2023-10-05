@@ -1,10 +1,19 @@
-import { TechnologySlider } from "./TechnologySlider"
+import { TechnologySlider } from './TechnologySlider'
+import Header from '../../components/Header'
+import './styles.scss'
 
 export const Technology = () => {
   return (
-    <section className='section-wrapper'>
-    <h3 className='title'><span className='title-number'>03 </span>Space launch 101</h3>
-      <TechnologySlider/>
-    </section>
+    
+    <div className='tech-container'>
+      <Header />
+      <section className='section-wrapper'>
+        <h3 className='title'>
+          <span className='title-number'>03 </span>
+          Space launch 101
+        </h3>
+          <TechnologySlider/>
+      </section>
+    </div>
   )
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-// import Header from '../../components/Header'
+import Header from '../../components/Header'
 import DestinationLayout from '../../components/DestinationLayout'
 import moon from '../../assets/destination/image-moon.webp'
 import mars from '../../assets/destination/image-mars.webp'
@@ -89,7 +89,7 @@ const Destination = () => {
 
   return (
     <section className='destination w-full h-full'>
-      {/* <Header /> */}
+      <Header />
       <div className='destination__planet-container'>
         <h2 className='destination__planet-container--title'><span>01</span> PICK YOUR DESTINATION</h2>
         <div className='destination__planet-container--content'>
