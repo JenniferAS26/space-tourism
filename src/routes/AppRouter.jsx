@@ -1,16 +1,17 @@
 import { Routes, Route, NavLink, useLocation, Link } from "react-router-dom";
-import { Technology } from "../components/Pages/Technology/Technology";
+import { Technology } from "../Pages/Technology/Technology";
 import { Error } from "../components/Error404";
-import { Destination } from "../components/Pages/Destination/Destination";
-import { Home } from "../components/Pages/Home";
-import { Crew } from "../components/Pages/Crew/Crew";
+import { Destination } from "../Pages//Destination/Destination";
+import { Home } from "../Pages/Home";
+import { Crew } from "../Pages//Crew/Crew";
 import logo from "../assets/shared/logo.svg"
 import { HamburgerMenu } from "./HamburgerMenu/HamburgerMenu";
 import { useState } from "react";
-export const AppRouter = () => {
 
-    let location = useLocation().pathname.split("/").join("")
-    const [checkValue, setCheckValue] = useState(false)
+const AppRoutes = () => {
+
+  let location = useLocation().pathname.split("/").join("")
+  const [checkValue, setCheckValue] = useState(false)
   return (
     <>
     
@@ -70,3 +71,5 @@ export const AppRouter = () => {
       </>
   );
 };
+
+export default AppRoutes

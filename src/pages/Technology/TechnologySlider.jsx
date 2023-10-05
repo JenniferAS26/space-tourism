@@ -1,6 +1,6 @@
 import Slider from 'slider-moon';
 import 'slider-moon/dist/style.css'
-import data from '../../../data/data.json'
+import data from '../../data/data.json'
 import './technology.css'
 
 export const TechnologySlider = () => {
