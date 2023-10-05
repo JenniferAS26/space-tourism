@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import Crew from '../pages/Crew/Crew'
+import Crew from '../pages/Crew'
 import Home from '../pages/Home/index.jsx'
 import Destination from '../pages/Destination'
 import { Technology } from '../pages/Technology/Technology'
