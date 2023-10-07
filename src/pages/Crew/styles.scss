@@ -13,20 +13,20 @@
 
 .crew-content-wrapper {
   position: absolute; 
-  top: 35%;
-  left: 10%;
+  top: 20%;
+  left: 8%;
   width: 80%;
   display: flex;
   position: sticky;
 }
 
 .crew-page-title {
-  /* position: absolute; */
-  top: 25%;
-  left: 10%;
-  width: 40%;
+  position: absolute;
+  top: 25px; /* Puedes ajustar esta cantidad según tus necesidades */
+  left: 10px; /* Puedes ajustar esta cantidad según tus necesidades */
   display: flex;
-  grid-auto-columns: auto;
+  flex-direction: column;
+  align-items: flex-start;
 
   span {
     font-weight: 700;
@@ -42,23 +42,50 @@
     font-size: 2.8rem;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: $secondary-text-color; 
+    color: $secondary-text-color;
+  }
+
+  
+@media (min-width: $tablet-width) {
+  .crew-page-title {
+    font-size: 2rem;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .crew-page-title {
+    justify-self: flex-start;
+    align-self: flex-end;
+    font-size: 2.8rem;
+    margin-left: 120px; 
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .crew-page-title {
+    font-size: 2rem;
+  }
+}
+}
+
 
 .crew-detail-tripulacion {
   display: flex;
   flex-direction: column;
-  grid-auto-flow: row;
+  width: 214px;
+  height: 37px;
+  align-content: space-around;
+  
 }
 
 .crew-detail-tripulacion-1 {
+  width: 60%;
   p {
     display: flex;
-    flex-direction: column-reverse;
+    //flex-direction: column-reverse;
     font-family: $font-source-heading-1;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     color: $secondary-text-color; 
     opacity: 0.5;
@@ -78,15 +105,17 @@
   p {
     font-weight: 400;
     font-size: 1.8rem;
-    line-height: 3rem;
+    line-height: 1.6rem;
     padding-top: 5%;
     width: 60%;
     color: $primary-text-color; 
+    border-left-width: 0;
   }
 }
 
 .crew-tripulacion-image {
   flex: 0 1 80%;
+ // border-right-width: 4px;//lines para mirar donde se hubica la imagen
   img {
     display: block;
     width: 48rem;
@@ -97,8 +126,8 @@
 
 .points-container {
   position: static;
-/*   bottom: 1%; /* Cambiar de top a bottom */
-  /*left: 1%; */
+  bottom: 0; 
+  left: 8%;
   justify-content: center;
   height: 20%;
   width: 20%;
@@ -106,6 +135,8 @@
 }
 
 .points {
+  bottom: 0; 
+  left: 10%;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -137,4 +168,8 @@
     min-width: 100vw;
     height: 100%;
   }  
-  */
+  */ 
+
+
+
+ 
