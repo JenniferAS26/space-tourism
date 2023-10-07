@@ -58,7 +58,7 @@ const Crew = () => {
           <div className="crew-right-border"></div>
           </div>
         </div>
-        <div className="points-container">
+        <div className="points-container absolute bottom-0 left-0">
           {data.crew.map((item) => {
             return (
               <div key={item.id}  className="points" id={`crew-${item.id}`} onClick={() => handleClick(item)}></div>
