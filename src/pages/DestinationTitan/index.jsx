@@ -9,7 +9,7 @@ const DestinationTitan = () => {
         <h1 className={style.title}>01 PICK YOUR DESTINATION</h1>
         <img src={imagetitan} alt="" />
         </div>
-        <div>
+        <div className={style.home}>
           EARTH
           MOON
           EUROPA
