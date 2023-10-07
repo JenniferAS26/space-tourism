@@ -2,64 +2,132 @@
 @use '../../styles/mixins' as *;
 
 .crew-page-container {
-  background-image: url('../../assets/crew/background-crew-mobile.jpg');
+  background-image: url('../../assets/crew/background-crew-mobile.jpg'); 
   background-size: cover;
   background-position: center;
   max-width: 100%;
   height: 100%;
   display: grid;
   gap: 12px;
-  @include removeHorizontalScroll;
-  .content-douglas, .content-mark, .content-victor, .content-anousheh, .content-anousheh {
-    flex-direction: column-reverse;
-    @media (min-width: $tablet-width) {
-      flex-direction: column;
-    }
-    @media (min-width: $desktop-width) {
-      flex-direction: row;
-      justify-content: center;
-      gap: 40px;
-    }
+}
+
+.crew-content-wrapper {
+  /* position: absolute; */
+  top: 35%;
+  left: 10%;
+  width: 80%;
+  display: flex;
+  position: sticky;
+}
+
+.crew-page-title {
+  /* position: absolute; */
+  top: 25%;
+  left: 10%;
+  width: 40%;
+  display: flex;
+
+  span {
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: $secondary-text-color;
+    letter-spacing: 4px;
+    opacity: 0.25;
+    margin-right: 2%;
   }
-  .crew-detail {
-    width: 330px;
-    @media (min-width: $tablet-width) {
-      width: 460px;
-    }
-    @media (min-width: $desktop-width) {
-      width: 490px;
-    }
+
+  p {
+    font-weight: 400;
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $secondary-text-color; 
   }
-  .crew-content-right {
-    width: 178px;
-    height: 222px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    @media (min-width: $tablet-width) {
-      width: 457px;
-      height: 572px;
-    }
-    @media (min-width: $tablet-width) {
-      width: 570px;
-      height: 712px;
-    }
+}
+
+.crew-detail-tripulacion {
+  display: flex;
+  flex-direction: column;
+}
+
+.crew-detail-tripulacion-1 {
+  p {
+    font-family: $font-source-heading-1;
+    font-weight: 400;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: $secondary-text-color; 
+    opacity: 0.5;
+    margin-bottom: 2%;
   }
-  @media (min-width: $tablet-width) {
+
+  h1 {
+    font-family: $font-source-heading-1;
+    font-weight: 400;
+    font-size: 5.6rem;
+    text-transform: uppercase;
+    color: $secondary-text-color; 
+  }
+}
+
+.crew-tripulacion-information {
+  p {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    padding-top: 5%;
+    width: 60%;
+    color: $primary-text-color; 
+  }
+}
+
+.crew-tripulacion-image {
+  img {
+    display: block;
+    width: 48rem;
+    height: 60rem;
+    transform: translateY(-15%);
+  }
+}
+
+.points-container {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  width: 20%;
+  display: flex;
+}
+
+.points {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin-right: 5%;
+  background-color: $secondary-text-color; 
+  opacity: 0.17;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+  /*  @media (min-width: $tablet-width) {
     background-image: url('../../assets/crew/background-crew-tablet.jpg');
     background-size: cover;
     background-position: center;
     min-width: $tablet-width;
     height: 100%;
   }
-
-  @media (min-width: $desktop-width) {
+ 
+    @media (min-width: $desktop-width) {
     background-image: url('../../assets/crew/background-crew-desktop.jpg');
     background-size: cover;
     background-position: center;
     min-width: 100vw;
     height: 100%;
-  }
-}
+  }  
+ */
