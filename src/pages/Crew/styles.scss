@@ -9,24 +9,37 @@
   height: 100%;
   display: grid;
   gap: 12px;
+  @include removeHorizontalScroll;
+  /* .content-douglas, .content-mark, .content-victor, .content-anousheh, .content-anousheh {
+    flex-direction: column-reverse;
+    @media (min-width: $tablet-width) {
+      flex-direction: column;
+    } */
+    @media (min-width: $desktop-width) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
 }
 
-.crew-content-wrapper {
-  position: absolute; 
-  top: 20%;
-  left: 8%;
+.crew-content-wrapper { 
+  top: 35%;
+  left: 10%;
   width: 80%;
   display: flex;
   position: sticky;
 }
 
 .crew-page-title {
-  position: absolute;
-  top: 25px; /* Puedes ajustar esta cantidad según tus necesidades */
-  left: 10px; /* Puedes ajustar esta cantidad según tus necesidades */
+  position: absolute ; 
+   /* Puedes ajustar esta cantidad según tus necesidades */
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+ /*  top: 2%; */
+  width: 40%;
+  margin-bottom: 10px;
+/*   margin-top: 10px;  */
+  /* flex-direction: column; */
+ /*  align-items: flex-start; */
 
   span {
     font-weight: 700;
@@ -40,52 +53,39 @@
   p {
     font-weight: 400;
     font-size: 2.8rem;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
+    font-family: $font-source-heading-2;
     text-transform: uppercase;
     color: $secondary-text-color;
   }
-
-  
+}
+ 
 @media (min-width: $tablet-width) {
   .crew-page-title {
     font-size: 2rem;
   }
 }
-
-@media (min-width: $desktop-width) {
-  .crew-page-title {
-    justify-self: flex-start;
-    align-self: flex-end;
-    font-size: 2.8rem;
-    margin-left: 120px; 
-  }
-}
-
-@media (min-width: $tablet-width) {
-  .crew-page-title {
-    font-size: 2rem;
-  }
-}
-}
-
-
 .crew-detail-tripulacion {
   display: flex;
   flex-direction: column;
-  width: 214px;
-  height: 37px;
-  align-content: space-around;
-  
+  margin-top: 25%;
+  @media (min-width: $tablet-width) {
+    width: 460px;
+  }
+  @media (min-width: $desktop-width) {
+    width: 490px;
+  }
 }
+  
+
 
 .crew-detail-tripulacion-1 {
-  width: 60%;
+ /*  line-height: normal; */
+  margin-top: 30px;  
   p {
-    display: flex;
-    //flex-direction: column-reverse;
     font-family: $font-source-heading-1;
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 3rem;
     text-transform: uppercase;
     color: $secondary-text-color; 
     opacity: 0.5;
@@ -103,40 +103,48 @@
 
 .crew-tripulacion-information {
   p {
-    font-weight: 400;
+    font-weight: 400px;
+    font-family: $font-source-heading-2;
     font-size: 1.8rem;
-    line-height: 1.6rem;
-    padding-top: 5%;
+    line-height: 3.2rem;
+   /*  padding-top: 5%;  */
     width: 60%;
     color: $primary-text-color; 
-    border-left-width: 0;
   }
 }
 
 .crew-tripulacion-image {
+  display: block;
+  width: 48rem;
+  height: 60rem;
+  transform: translateY(-15%);
   flex: 0 1 80%;
- // border-right-width: 4px;//lines para mirar donde se hubica la imagen
+  margin-top: 210px;
   img {
-    display: block;
+     display: block;
     width: 48rem;
-    height: 60rem;
-    transform: none;
+    height: 70rem;
+    transform: none; 
   }
 }
+/* .crew-right-border{
 
+} */
 .points-container {
   position: static;
-  bottom: 0; 
-  left: 8%;
-  justify-content: center;
-  height: 20%;
-  width: 20%;
+  bottom: 10%; 
+  left: 10%;
+  width: 20%; 
+  margin-top: -50px;
+  margin-left: 55px;
   display: flex;
+ /*  stroke-width: 1px; */
+ /*  border-left-width: 0; */
 }
 
 .points {
-  bottom: 0; 
-  left: 10%;
+  /* bottom: 0; */ 
+ /*  left: 10%; */
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
@@ -153,23 +161,125 @@
   }
 }
 
-  /*  @media (min-width: $tablet-width) {
-    background-image: url('../../assets/crew/background-crew-table.jpg');
+
+
+/*  @media (min-width: $tablet-width) {
+    background-image: url('../../assets/crew/background-crew-tablet.jpg')
     background-size: cover;
     background-position: center;
     min-width: $tablet-width;
-    height: 100%;
-  }
+  
+    .crew-page-title{
+      width: 100%;
+      top: 15%;
+      left: 0;
+      justify-content: center;
+      span{
+        font-size: 1.6rem;
+      }
+      p{
+        font-size: 1.6rem;
+      }
+    }
+    .crew-content-wrapper{
+      top: 18%;
+      flex-direction: column-reverse;
+    }
+    .crew-detail-tripulacion{
+      flex: 0 1 70%;
+      margin-top: 5%;
+    }
+    .crew-detail-tripulacion-1{
+      margin-bottom: 5%;
+      p{
+        font-size: 1.6rem;
+      }
+      h1{
+        font-size: 2.4rem;
+    }
+    .crew-tripulacion-information{
+      font-size: 1.5rem;
+      padding: 0;
+    }
+    .crew-tripulacion-image{
+      flex: 0 1 30%;
+      width: 20rem;
+      height: 25rem;
+      margin: 0 auto;
+    }
+    .crew-right-border{
+      display: block;
+      width: 100%;
+      border: 1px solid #0B0D17; 
+    }
+    .points-container{
+      top: 55%;
+      padding: 2%;
+    }
+    points{
+      width: 1rem;
+      padding: 1rem;
+    }
+  } 
  
-    @media (min-width: $desktop-width) {
+ @media (min-width: $desktop-width) {
     background-image: url('../../assets/crew/background-crew-desktop.jpg');
     background-size: cover;
     background-position: center;
     min-width: 100vw;
     height: 100%;
-  }  
-  */ 
-
-
+    .crew-page-title{
+    justify-self: flex-start;
+    align-self: flex-end;
+    font-size: 2.8rem;
+    margin-left: 120px; 
+      span{
+        font-size: 1.6rem;
+      }
+      p{
+        font-size: 1.6rem;
+      }
+    }
+    .crew-content-wrapper{
+      top: 18%;
+      flex-direction: column-reverse;
+    }
+    .crew-detail-tripulacion{
+      flex: 0 1 70%;
+      margin-top: 5%;
+    }
+    .crew-detail-tripulacion-1{
+      margin-bottom: 5%;
+      p{
+        font-size: 1.6rem;
+      }
+      h1{
+        font-size: 2.4rem;
+    }
+    .crew-tripulacion-information{
+      font-size: 1.5rem;
+      padding: 0;
+    }
+    .crew-tripulacion-image{
+      flex: 0 1 30%;
+      width: 20rem;
+      height: 25rem;
+      margin: 0 auto;
+    }
+    .crew-right-border{
+      display: block;
+      width: 100%;
+      border: 1px solid #0B0D17; 
+    }
+    .points-container{
+      top: 55%;
+      padding: 2%;
+    }
+    points{
+      width: 1rem;
+      padding: 1rem;
+    }
+  }    */
+  
 
  

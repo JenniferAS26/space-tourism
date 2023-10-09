@@ -40,36 +40,39 @@ const Crew = () => {
   return (
     <section className="crew-page-container w-full h-full">
       <Header />
-      <div className="crew-content-wrapper w-full h-full">
-        <div className="crew-page-title ">
-            <span>02{crew.id}</span>
-            <p className=" ">Meet your crew</p>
+      <div className="crew-content-wrapper w-full mx-2 md:mx-8 lg:mx-16">
+        <div className="crew-page-title grid-rows-2 space-x-0.5">
+          <span className="md:text-2xl lg:text-3xl">02{crew.id}</span>
+          <p className="mx-4 md:mx-8 text-xl md:text-2xl lg:text-3xl">Meet your crew</p>
         </div>
-        <div className="crew-detail-tripulacion w-full h-full text-lef tleft-0  bottom-0 left-0 t m-auto lg:ml-[200px]">
-          <div className="crew-detail-tripulacion-1 text-left  ">
-            <p>{crew.role}</p>
-            <h1>{crew.name}</h1>
+        <div className="crew-detail-tripulacion w-full text-left">
+          <div className="crew-detail-tripulacion-1 grid-rows-2 text-left">
+            <p className="text-lg md:text-xl lg:text-2xl">{crew.role}</p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl">{crew.name}</h1>
           </div>
           <div className="crew-tripulacion-information ">
-            <p className="max-w-lg text-3xl text-left  font-$font-source-heading-2 leading-normal text-$primary-text-color-900 dark:text-white leading-{type}">{crew.bio}</p>
+            <p className="max-w-lg text-xl md:text-2xl lg:text-3xl">{crew.bio}</p>
           </div>
-         
-          <div className="crew-tripulacion-image h-auto max-w-lg ml-auto w-616 h-607">
-              <img src={crew.image} alt={crew.name} />
-          <div className="crew-right-border"></div>
-          </div>
-          </div>
-          </div>
-          <div className="points-container   bottom-0 left-0 w-616  h-607 inset-y-0 right-0 flex-shrink-0;">
-            {data.crew.map((item) => {
-              return (
-                <div key={item.id}  className="points" id={`crew-${item.id}`} onClick={() => handleClick(item)}></div>
-                );
-            })}
-        </div>
-      
-    </section>
-  )
-}
 
-export default Crew
+          <div className="crew-tripulacion-image  max-w-lg md:max-w-2xl w-full h-auto mx-auto md:mx-0">
+            <img className="grid-rows-6" src={crew.image} alt={crew.name} />
+            <div className="crew-right-border"></div>
+          </div>
+        </div>
+      </div>
+      <div className="points-container bottom-0 left-0 w-full md:w-1/4 lg:w-1/5 flex-shrink-0">
+        {data.crew.map((item) => (
+          <div
+            key={item.id}
+            className="points cursor-pointer"
+            id={`crew-${item.id}`}
+            onClick={() => handleClick(item)}
+          ></div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Crew;
+
