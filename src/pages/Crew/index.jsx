@@ -67,15 +67,13 @@ const Crew = () => {
       </div>
     </div>
     
-    <div className="points-container bottom-0 left-0 w-full md:w-1/4 lg:w-1/5 flex-shrink-0">
-      {data.crew.map((item) => (
-        <div className="points cursor-pointer"
-          key={item.id}
-          id={`crew-${item.id}`}
-          onClick={() => handleClick(item)}
-        ></div>
-      ))}
-    </div>
+    <div className="points-container">
+          {data.crew.map((item) => {
+            return (
+              <div key={item.id}  className="points" id={`crew-${item.id}`} onClick={() => handleClick(item)}></div>
+              );
+          })}
+        </div>
 </section>
 
   
