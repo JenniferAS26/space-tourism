@@ -8,7 +8,7 @@ import data from '../../data/data.json'
 import "./styles.scss";
 
 const Crew = () => {
-  const [crew, setCrew] = useState(null);
+  const [crew, setCrew] = useState([]);
 
   const handleClick = (item) => {
     setCrew({
@@ -38,39 +38,47 @@ const Crew = () => {
   }
   
   return (
-    <section className="crew-page-container w-full h-full">
-      <Header />
-      <div className="crew-content-wrapper w-full mx-2 md:mx-8 lg:mx-16">
-        <div className="crew-page-title grid-rows-2 space-x-0.5">
-          <span className="md:text-2xl lg:text-3xl">02{crew.id}</span>
-          <p className="mx-4 md:mx-8 text-xl md:text-2xl lg:text-3xl">Meet your crew</p>
-        </div>
-        <div className="crew-detail-tripulacion w-full text-left">
-          <div className="crew-detail-tripulacion-1 grid-rows-2 text-left">
-            <p className="text-lg md:text-xl lg:text-2xl">{crew.role}</p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl">{crew.name}</h1>
-          </div>
-          <div className="crew-tripulacion-information ">
-            <p className="max-w-lg text-xl md:text-2xl lg:text-3xl">{crew.bio}</p>
-          </div>
+    <section className="crew-page-container w-full h-full md:h-full md:w-4 ">
+    <Header />
 
-          <div className="crew-tripulacion-image  max-w-lg md:max-w-2xl w-full h-auto mx-auto md:mx-0">
-            <img className="grid-rows-6" src={crew.image} alt={crew.name} />
-            <div className="crew-right-border"></div>
-          </div>
+    <div className="crew-content-wrapper w-full  md:w-32 lg:w-48mx-2 md:mx-8 lg:mx-16">
+
+      <div className="crew-page-title mb-4 md:mb-8 text-center sm:text-left underline-animation">
+        <span className="md:text-2xl lg:text-3xl">02{crew.id}</span>
+        <p className="mx-4 md:mx-8 text-xl md:text-2xl lg:text-3xl">Meet your crew</p>
+      </div>
+
+      <div className="crew-detail-tripulacion w-full  md:w-32 lg:w-48  ">
+      
+        <div className="crew-detail-tripulacion-1 grid grid-rows-4 grid-flow-col gap-4 ">
+          <p className="text-lg md:text-xl lg:text-2xl w-16 md:w-32 lg:w-48 ">{crew.role}</p>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl w-16 md:w-32 lg:w-48">{crew.name}</h1>
+        </div>
+
+        <div className="crew-tripulacion-information ">
+          <p className="max-w-lg text-xl  md:text-2xl lg:text-3xl">{crew.bio}</p>
+        </div>
+
+        <div className="crew-tripulacion-right  max-w-lg md:max-w-2xl w-full h-auto mx-auto md:mx-0">
+          <img src={crew.image} alt={crew.name} />
+          <div className="crew-right-border"></div>
         </div>
       </div>
-      <div className="points-container bottom-0 left-0 w-full md:w-1/4 lg:w-1/5 flex-shrink-0">
-        {data.crew.map((item) => (
-          <div
-            key={item.id}
-            className="points cursor-pointer"
-            id={`crew-${item.id}`}
-            onClick={() => handleClick(item)}
-          ></div>
-        ))}
-      </div>
-    </section>
+    </div>
+    
+    <div className="points-container bottom-0 left-0 w-full md:w-1/4 lg:w-1/5 flex-shrink-0">
+      {data.crew.map((item) => (
+        <div
+          key={item.id}
+          className="points cursor-pointer"
+          id={`crew-${item.id}`}
+          onClick={() => handleClick(item)}
+        ></div>
+      ))}
+    </div>
+</section>
+
+  
   );
 };
 
