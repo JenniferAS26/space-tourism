@@ -5,7 +5,6 @@ import './styles.scss'
 
 const TechBackup = () => {
   const technologies = data.technology
-  console.log(technologies)
   const [value, setValue] = useState(0)
   const { name, images, description } = technologies[value]
 
