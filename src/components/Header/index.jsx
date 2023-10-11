@@ -1,52 +1,85 @@
-import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../assets/shared/logo.svg'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import './styles.scss'
 
 const Header = () => {
-  const [checkValue, setCheckValue] = useState(false)
+  const [menu, setMenu] = useState(false)
+
+  const handleOpenMenu = () => {
+    const navMenu = document.querySelector('.nav-menu')
+    setMenu(true)
+    navMenu.classList.add('open')
+  }
+
+  const handleCloseMenu = () => {
+    const navMenu = document.querySelector('.nav-menu')
+    setMenu(false)
+    navMenu.classList.remove('open')
+  }
+
+  useEffect(() => {
+    const navMenu = document.querySelector('.nav-menu')
+    window.addEventListener('click', (event) => {
+      if (menu && event.target.parentElement.id !== 'menu-open-button') {
+        setMenu(false)
+        navMenu.classList.remove('open')
+      }
+    })
+  }, [])
 
   return (
-    <header className='header'>
-      <Link className='logo' to='/'>
-      <img src={logo} alt='logo'/>
-      </Link>
-      <div className='header__line'></div>
-        <nav className={'navbar ' + ((checkValue) ? 'active' : '')}>
-          <ul className='navlist'  onClick={() => setCheckValue(false)}>
-
-            <li className='navlink'>
-              <NavLink to='/' >
-                <span className='nav-number'>00 &nbsp; </span>
-                Home
-              </NavLink>
+    <section className='header'>
+      <div className='logo-container'>
+        <Link className='logo-link' to='/'>
+          <img className='logo' src={logo} alt='logo icon' />
+        </Link>
+      </div>
+      <div className='header__bar'></div>
+      <div>
+        <button
+          id='menu-open-button'
+          className='menu-open'
+          onClick={handleOpenMenu}
+        >
+          <AiOutlineMenu />
+        </button>
+      </div>
+      <nav className='nav-menu'>
+        <ul>
+          <li className='close'>
+            <AiOutlineClose
+              id='menu-close-button'
+              className='menu-close'
+              onClick={handleCloseMenu}
+            />
+          </li>
+          <div className='menu-list'>
+            <li>
+              <Link className='link' to='/'>
+                <span>00</span> Home
+              </Link>
             </li>
-
-            <li className='navlink'>
-              <NavLink to='/destination'>
-                <span className='nav-number'>01 &nbsp; </span>
-                Destination
-              </NavLink>
+            <li>
+              <Link className='link' to='/destination'>
+                <span>01</span> Destination
+              </Link>
             </li>
-
-            <li className='navlink'>
-              <NavLink to='/crew'>
-                <span className='nav-number'>02 &nbsp; </span>
-                Crew
-              </NavLink>
+            <li>
+              <Link className='link' to='/crew'>
+                <span>02</span> Crew
+              </Link>
             </li>
-
-            <li className='navlink'>
-              <NavLink to='/technology'>
-                <span className='nav-number'>03 &nbsp; </span>
-                Technology
-              </NavLink>
+            <li>
+              <Link className='link' to='/technology'>
+                <span>03</span> Technology
+              </Link>
             </li>
-          </ul>
-        </nav>
-        <HamburgerMenu setCheckValue={setCheckValue} checkValue={checkValue}/>
-    </header>
+          </div>
+        </ul>
+      </nav>
+    </section>
   )
 }
 
