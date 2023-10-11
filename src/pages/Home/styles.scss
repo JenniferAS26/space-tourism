@@ -3,18 +3,19 @@
 
 .home {
   color: white;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
-  align-items: center;
+  justify-items: center;
+  grid-auto-rows: 300px 200px;
+  grid-template-columns: $mobile-width;
   background-image: url("../src/assets/home/background-home-mobile.jpg");
   background-size: cover;
   background-position: center;
   max-width: 100vw;
   height: 100vh;
-  row-gap: 81px;
+  gap: 50px;
   min-width: $mobile-width;
-
+  margin-top: 40px;
   .home-article {
     max-width: 32.7rem;
     height: 296px;
@@ -117,7 +118,7 @@
   
   .explore-btn:hover {
     cursor: pointer;
-    box-shadow: 0 0 0 1em $pale-frosty-blue-t;
+    box-shadow: 0 0 0 1em rgba($color: $pale-frosty-blue-t, $alpha: 0.3);
     transform: scale(1.1);
   }
   @media (min-width: $tablet-width) {
@@ -126,6 +127,9 @@
     background-position: center;
     min-width: $tablet-width;
     height: 100%;
+    grid-auto-rows: 500px 300px;
+    grid-template-columns: $tablet-width;
+    gap: 70px;
   }
   @media (min-width: $desktop-width) {
     background-image: url("../src/assets/home/background-home-desktop.jpg");
@@ -134,8 +138,7 @@
     min-width: 100vw;
     height: 100vh;
     padding: 0 165px;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flexCenter(row, space-between, center);
   }
 }
 
