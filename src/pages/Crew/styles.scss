@@ -1,6 +1,7 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
+
 .crew-page-container {
   background-image: url('../../assets/crew/background-crew-mobile.jpg');
   background-size: cover;
@@ -9,74 +10,53 @@
   height: 100%;
   display: grid;
   gap: 12px;
-  @include removeHorizontalScroll;
-  @media (min-width: $tablet-width) {
-    flex-direction: column;
-  }
-  @media (min-width: $desktop-width) {
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-  }
+@include removeHorizontalScroll;
 }
-
+ 
 .crew-content-wrapper {
+  position: sticky; 
   top: 35%;
   left: 10%;
   width: 80%;
   display: flex;
-  position: sticky;
 }
 
 .crew-page-title {
-/*     position: absolute; */
- /*  display: flex; */ 
-  width: 100%;
-
-
+  width: 204px;
+  border-top-width: 0;
+  align-content: flex-start;
+  padding: 0px, 3px, 0px, 0px;
+  
   span {
-    font-weight: 700;
-    font-size: 2.8rem;
     color: $secondary-text-color;
-    letter-spacing: 4px;
+    font-family: $font-source-heading-2;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3.375px;
     opacity: 0.25;
-    margin-right: 2%;
-    
   }
 
   p {
-    font-weight: 400;
-    font-size: 2.8rem;
-    letter-spacing: 5px;
-    font-family: $font-source-heading-2;
-    text-transform: uppercase;
     color: $secondary-text-color;
-  }
-}
-
-@media (min-width: $tablet-width) {
-  .crew-page-title {
-    font-size: 2rem;
+    font-family: $font-source-heading-2;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3.375px;
+    text-transform: uppercase;
+    align-items: center; 
   }
 }
 
 .crew-detail-tripulacion {
   display: flex;
   flex-direction: column;
-  margin-top: 25%;
-
-
-  @media (min-width: $tablet-width) {
-    width: 460px;
-  }
-
-  @media (min-width: $desktop-width) {
-    width: 490px;
-  }
+  width: 536px;
+  padding-top: 234px;
 }
 
 .crew-detail-tripulacion-1 {
-  margin-top: 30px;
+  width: 520px;
+  height: 232px;
 
   p {
     font-family: $font-source-heading-1;
@@ -86,56 +66,46 @@
     color: $secondary-text-color;
     opacity: 0.5;
     margin-bottom: 2%;
-    /* justify-content: center; */
   }
 
   h1 {
     font-family: $font-source-heading-1;
     font-weight: 400;
-    font-size: 4rem;
+    font-size: 5rem;
     text-transform: uppercase;
     color: $secondary-text-color;
- 
   }
 }
 
 .crew-tripulacion-information {
   p {
-    font-weight: 400px;
     font-family: $font-source-heading-2;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
-    width: 60%;
-    color: $primary-text-color;
-    text-transform: lowercase;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
     text-align: center;
+    color: $primary-text-color;
   }
 }
 
-.crew-tripulacion-image { 
-  right: 135px;
-  width: 178px;
-  height: 222px;
-  img {
-   /*  display: block; */
-  /*   width: 48rem; */
-    /* height: 60rem; */
-     transform: translateY(-15%);
-   /*  padding: 735px 135px; */
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+.crew-tripulacion-image img {
+  display: block;
+  position: relative;
+  width: 420px;
+  height: 532px;
+  top: 492px;
+  transform: translateY(-15%);
+
+
+/*   top: 20px; */
+  margin-top: 15%;
 }
 
 .points-container {
-  position: static;
+  position: absolute;
+  align-content: flex-start;
   bottom: 10%;
-  left: 10%;
-  width: 88px;
-  height: 10px;
-  margin-top: -50px;
-  margin-left: 55px;
+  width: 20%;
   display: flex;
 }
 
@@ -151,130 +121,134 @@
   &:hover {
     opacity: 0.5;
   }
-
-  &:active {
+  
+  &.active {
     opacity: 1;
   }
 }
 
-
-
-/* 
- @media (min-width: $tablet-width) {
-    background-image: url('../../assets/crew/background-crew-tablet.jpg')
-    background-size: cover;
-    background-position: center;
+@media (min-width: $tablet-width) {
+  .crew-page-container {
+    background-image: url('../../assets/crew/background-crew-tablet.jpg');
     min-width: $tablet-width;
-    height: 100%;
-  
-    .crew-page-title{
-      width: 100%;
-      top: 15%;
-      left: 0;
-      justify-content: center;
-      span{
-        font-size: 1.6rem;
-      }
-      p{
-        font-size: 1.6rem;
-      }
-    }
-    .crew-content-wrapper{
-      top: 18%;
-      flex-direction: column-reverse;
-    }
-    .crew-detail-tripulacion{
-      flex: 0 1 70%;
-      margin-top: 5%;
-    }
-    .crew-detail-tripulacion-1{
-      margin-bottom: 5%;
-      p{
-        font-size: 1.6rem;
-      }
-      h1{
-        font-size: 2.4rem;
-    }
-    .crew-tripulacion-information{
-      font-size: 1.5rem;
-      padding: 0;
-    }
-    .crew-tripulacion-image{
-      flex: 0 1 30%;
-      width: 20rem;
-      height: 25rem;
-      margin: 0 auto;
-    }
-    .crew-right-border{
-      display: block;
-      width: 100%;
-      border: 1px solid #0B0D17; 
-    }
-    .points-container{
-      top: 55%;
-      padding: 2%;
-    }
-    points{
-      width: 1rem;
-      padding: 1rem;
-    }
-  } 
- 
- @media (min-width: $desktop-width) {
-    background-image: url('../../assets/crew/background-crew-desktop.jpg');
-    background-size: cover;
-    background-position: center;
-    min-width: 100vw;
-    height: 100%;
-    .crew-page-title{
-      top: 15%;
-      left: 5%;
-      span{
-        font-size: 1.6rem;
-      }
-      p{
-        font-size: 1.6rem;
-      }
-    }
-    .crew-content-wrapper{
-      top: 18%;
-      flex-direction: column-reverse;
-    }
-    .crew-detail-tripulacion{
-      flex: 0 1 70%;
-      margin-top: 5%;
-    }
-    .crew-detail-tripulacion-1{
-      margin-bottom: 5%;
-      p{
-        font-size: 1.6rem;
-      }
-      h1{
-        font-size: 2.4rem;
-    }
-    .crew-tripulacion-information{
-      width: 100%;
-      text-align: center;
-      padding: 5%;
-    }
-    .crew-tripulacion-image{
-      transform: none;
-      margin-top: 25%;
-    }
-    .crew-right-border{
-        display: none;
-    }
-    .points-container{
-     top: 45%;
-     left: 0;
-     justify-content: center;
-    width: 100vw;
-    }
-    points{
-      width: 1rem;
-      padding: 1rem;
-    }
-  }   
-   */
+  }
+  .crew-page-title {
+    top: 15%;
+    left: 5%;
+  }
 
- 
+  .crew-content-wrapper {
+    flex-direction: column;
+    top: 22%;
+    bottom: 0;
+    align-items: center;
+  }
+
+  .crew-detail-tripulacion {
+    text-align: center;
+    margin-bottom: 10%;
+  }
+
+  .crew-detail-tripulacion-1 p {
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+  }
+
+  .crew-tripulacion-information {
+    flex: 0 1 80%;
+  }
+
+  .crew-tripulacion-image img{
+    transform: none;
+    margin-top: 25%;
+  }
+
+  .crew-right-border {
+    display: none;
+  }
+
+  .points-container {
+    top: 45%;
+    left: 0;
+    justify-content: center;
+    width: 100vw;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .crew-page-container {
+    background-image: url('../../assets/crew/background-crew-desktop.jpg');
+    min-width: 100vw;
+  }
+  .crew-page-title {
+    width: 100%;
+    top: 15%;
+    left: 0;
+    justify-content: center;
+  }
+
+  .crew-page-title {
+    span, p {
+    font-size: 1.6rem;
+  }
+  }
+
+  .crew-content-wrapper {
+    top: 18%;
+    flex-direction: column-reverse;
+  }
+
+  .crew-detail-tripulacion {
+    flex: 0 1 70%;
+    margin-top: 5%;
+  }
+
+  .crew-detail-tripulacion-1
+   {
+    margin-bottom: 5%;
+  }
+
+  .crew-detail-tripulacion-1
+   p {
+    font-size: 1.6rem;
+  }
+
+  .crew-detail-tripulacion-1
+   h1 {
+    font-size: 2.4rem;
+  }
+
+  .crew-detail-tripulacion-2 p {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .crew-tripulacion-information {
+    padding-top: 10%;
+    width: 100%;
+  }
+
+  .crew-tripulacion-image img {
+    flex: 0 1 30%;
+    width: 20rem;
+    height: 25rem;
+    margin: 0 auto;
+  }
+
+  .crew-right-border {
+    display: block;
+    width: 100%;
+    border: 1px solid #383b4b;
+  }
+
+  .points-container {
+    top: 55%;
+    padding: 2%;
+  }
+
+  .points {
+    width: 1rem;
+    height: 1rem;
+  }
+}
