@@ -10,7 +10,7 @@
   height: 100%;
   display: grid;
   gap: 12px;
-/* @include removeHorizontalScroll; */
+
 }
  
 .crew-content-wrapper {
@@ -19,6 +19,7 @@
   left: 10%;
   width: 80%;
   display: flex;
+  
 }
 
 .crew-page-title {
