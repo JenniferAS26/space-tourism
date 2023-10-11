@@ -12,7 +12,7 @@
     height: 100vh;
     position: absolute;
     color: $secondary-text-color;
-    background-color: $pale-frosty-blue-t;
+    background-color: rgba($color: $pale-frosty-blue-t, $alpha: 0.2);
     backdrop-filter: blur(15px);
     font-family: $font-source-heading-2;
     font-size: 1.5rem;
