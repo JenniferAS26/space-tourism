@@ -46,30 +46,35 @@ const Crew = () => {
           <p>Meet your crew</p>
         </div>
         <div className="crew-detail-tripulacion">
-          <div className="crew-detail-tripulacion-1">
-            <p>{crew.role}</p>
-            <h1>{crew.name}</h1>
-          </div>
-          <div className="crew-tripulacion-information">
-            <p>{crew.bio}</p>
+          <div className="crew-detail-tripulacion__wrapper">
+            <div className="crew-detail-tripulacion-1">
+              <p>{crew.role}</p>
+              <h1>{crew.name}</h1>
+            </div>
+            <div className="crew-tripulacion-information">
+              <p>{crew.bio}</p>
+            </div>
           </div>
           <div className="crew-tripulacion-image">
             <img src={crew.image} alt={crew.name} />
             <div className="crew-right-border"></div>
           </div>
+          <div className="points-container">
+            {
+              data.crew.map((item) => {
+                return (
+                  <div
+                    key={item.id}
+                    className="points"
+                    id={`crew-${item.id}`}
+                    onClick={() => handleClick(item)}
+                  ></div>
+                );
+              })
+            }
+          </div>
         </div>
-        <div className="points-container">
-          {data.crew.map((item) => {
-            return (
-              <div
-                key={item.id}
-                className="points"
-                id={`crew-${item.id}`}
-                onClick={() => handleClick(item)}
-              ></div>
-            );
-          })}
-        </div>
+        
       </div>
     </section>
   );
