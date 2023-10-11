@@ -109,14 +109,13 @@
       min-width: $tablet-width;
       min-height: $tablet-height;
       width: 100%;
-      margin: 0 auto;
+      margin: 50px auto;
       grid-template-rows: 90px auto;
     }
     @media (min-width: $desktop-width) {
       min-width: $desktop-width;
       min-height: $desktop-height;
       width: 100%;
-      margin: 0 auto;
       grid-template-rows: 70px auto;
       gap: 20px;
     }
