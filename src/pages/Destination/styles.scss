@@ -5,9 +5,11 @@
   background-image: url('../../assets/destination/background-destination-mobile.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   max-width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: grid;
+  grid-template-rows: 80px auto;
   gap: 10px;
   &__planet-container {
     min-width: $mobile-width;
@@ -123,16 +125,11 @@
 
   @media (min-width: $tablet-width) {
     background-image: url('../../assets/destination/background-destination-tablet.jpg');
-    background-size: cover;
-    background-position: center;
     min-width: $tablet-width;
-    height: 100%;
 
   }
   @media (min-width: $desktop-width) {
     background-image: url('../../assets/destination/background-destination-desktop.jpg');
-    background-size: cover;
-    background-position: center;
     min-width: 100vw;
     min-height: 100vh;
   }

@@ -88,7 +88,7 @@ const Destination = () => {
   }
 
   return (
-    <section className='destination w-full h-full'>
+    <section className='destination w-full'>
       <Header />
       <div className='destination__planet-container'>
         <h2 className='destination__planet-container--title'><span>01</span> PICK YOUR DESTINATION</h2>

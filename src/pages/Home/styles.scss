@@ -4,7 +4,7 @@
 .home-wrapper {
   width: 100%;
   height: 100%;
-  background-image: url("../src/assets/home/background-home-mobile.jpg");
+  background-image: url("../src/assets/home/background-home-mobile-svg.svg");
   background-size: cover;
   background-position: center;
   .home {
@@ -18,7 +18,7 @@
     height: 100vh;
     gap: 50px;
     min-width: $mobile-width;
-    margin-top: 40px;
+    padding-top: 40px;
     .home-article {
       max-width: 32.7rem;
       height: 296px;
@@ -139,14 +139,14 @@
     }
   }
   @media (min-width: $tablet-width) {
-    background-image: url("../src/assets/home/background-home-tablet.jpg");
+    background-image: url("../src/assets/home/background-home-tablet-svg.svg");
     background-size: cover;
     background-position: center;
     min-width: $tablet-width;
-    height: 100%;
+    height: 100vh;
   }
   @media (min-width: $desktop-width) {
-    background-image: url("../src/assets/home/background-home-desktop.jpg");
+    background-image: url("../src/assets/home/background-home-desktop-svg.svg");
     background-size: cover;
     background-position: center;
     min-width: 100vw;
